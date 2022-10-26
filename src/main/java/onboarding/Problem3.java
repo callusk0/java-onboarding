@@ -56,10 +56,10 @@ public class Problem3 {
         {
             double xnum = Math.pow(10,i);
             temp = num/(int)xnum;
-            int x = temp % (int)xnum;
+            int x = temp % 10;
             t_count += x * n_th;
             if(x == 3 || x == 6 || x == 9)
-                t_count += num%xnum + 1;
+                t_count += (num%xnum) + 1;
             if (x < 4)
                 t_count += 0 * xnum; 
             else if (x < 7)
