@@ -1,11 +1,9 @@
 package onboarding;
 
-import org.assertj.core.util.diff.DeleteDelta;
-
 public class Problem2 {
     public static String solution(String cryptogram) {
         String answer = "answer";
-        answer = get_answer();
+        answer = get_answer(cryptogram);
         return answer;
     }
 
@@ -13,20 +11,47 @@ public class Problem2 {
         if(answer.length() <2)
             return answer;
         StringBuilder temp = new StringBuilder();
-        마지막 처리
 
+        boolean isSame = false;
         char x = answer.charAt(0);
+        int a = 0;
         for(int i = 1; i < answer.length() ;i++){
+            // if(x == answer.charAt(i))
+            // {
+
+            // }
+            // else
+            // {
+            //     temp.append(x);
+            //     x = answer.charAt(i);
+            // }
+
+
             if(x == answer.charAt(i)){
+                isSame = true;
             }
-            else{
-                temp.append(x);
-                x = answer.charAt(i);
+            if(x != answer.charAt(i)){
+                if(isSame == false){
+                    temp.append(x);
+                    x = answer.charAt(i);
+                    a++;
+                }
+                if(isSame == true){
+                    isSame = false;
+                    x = answer.charAt(i);
+                }
             }
         }
-        String temp_string = temp.toString();
-        if(temp_string.charAt(temp_string.length()) !=  )
+        if( a== answer.length()- 1)
+        {
+            return answer;
+        }
 
-        return temp.toString();
+
+        if(x != answer.charAt(answer.length() - 2)){
+            temp.append(x);
+        }
+
+        return get_answer(temp.toString());
     }
 }
