@@ -16,16 +16,6 @@ public class Problem2 {
         char x = answer.charAt(0);
         int a = 0;
         for(int i = 1; i < answer.length() ;i++){
-            // if(x == answer.charAt(i))
-            // {
-
-            // }
-            // else
-            // {
-            //     temp.append(x);
-            //     x = answer.charAt(i);
-            // }
-
 
             if(x == answer.charAt(i)){
                 isSame = true;
