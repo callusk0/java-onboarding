@@ -52,43 +52,81 @@ public class Problem6 {
         return compare(divform);
     }
 
-    public static List<String> compare(List<List<String>> compareList)
-    {
-        //1부터 이름 시작
-        //중복 제거
-        List<String> l_ans = new ArrayList<>();
-        for(int i = compareList.size() - 1; i >= 0; i--)
-        {
-            List<String> temp = new ArrayList<>();
-            temp = compareList.get(i);
-            for(int j = 1; j < temp.size();j++)
-            {
-                String tempSt = temp.get(j);
-                for(int k = i -1; k >= 0; k--)
-                {
-                    if(k < 0 || l_ans.contains(compareList.get(k).get(0)))
-                        break;
-                    for(int l = 1; l<compareList.get(k).size();l++)
-                    {
-                        if(tempSt.equals(compareList.get(k).get(l)))
-                        {
-                            if(!l_ans.contains(temp.get(0))){
-                                l_ans.add(temp.get(0));
-                            }
-                            if(!l_ans.contains(compareList.get(k).get(0))){
-                                l_ans.add(compareList.get(k).get(0));
-                                break;
-                            }
-                        }
-                    }
+    // public static List<String> compare(List<List<String>> compareList)
+    // {
+    //     //1부터 이름 시작
+    //     //중복 제거
+    //     List<String> l_ans = new ArrayList<>();
+    //     for(int i = compareList.size() - 1; i >= 0; i--)
+    //     {
+    //         List<String> temp = new ArrayList<>();
+    //         temp = compareList.get(i);
+    //         for(int j = 1; j < temp.size();j++)
+    //         {
+    //             String tempSt = temp.get(j);
+    //             for(int k = i -1; k >= 0; k--)
+    //             {
+    //                 if(k < 0 || l_ans.contains(compareList.get(k).get(0)))
+    //                     break;
+    //                 for(int l = 1; l<compareList.get(k).size();l++)
+    //                 {
+    //                     if(tempSt.equals(compareList.get(k).get(l)))
+    //                     {
+    //                         if(!l_ans.contains(temp.get(0))){
+    //                             l_ans.add(temp.get(0));
+    //                         }
+    //                         if(!l_ans.contains(compareList.get(k).get(0))){
+    //                             l_ans.add(compareList.get(k).get(0));
+    //                             break;
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
 
+    //     Collections.sort(l_ans, String.CASE_INSENSITIVE_ORDER);
+    //     return l_ans;
+    // }
+
+    public static List<String> compare(List<List<String>> compareList) {
+        List<String> answerlist = new ArrayList<>();
+        //compareList = [[[asdf@nnn], [nn], [nn]]]
+        for(int i =compareList.size()-1;i>0;i--)
+        {
+            for(int j = i-1; j>=0;j--){
+                if(answerlist.contains(compareList.get(j).get(0)))
+                    break;
+                if(hasSimilarName(compareList.get(i), compareList.get(j))){
+                    putInList(answerlist, compareList.get(i).get(0), compareList.get(j).get(0));
+                    break;
                 }
             }
         }
-        
 
-        Collections.sort(l_ans, String.CASE_INSENSITIVE_ORDER);
-        return l_ans;
+        Collections.sort(answerlist, String.CASE_INSENSITIVE_ORDER);
+        return answerlist;
+    }
+
+    public static boolean hasSimilarName(List<String> x, List<String> y) {
+        for(int i = x.size()-1;i>0;i--)
+        {
+            for(int j = y.size()-1;j>0;j--)
+            {
+                if(x.get(i).equals(y.get(j)))
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    public static void putInList(List<String> answerlist, String x, String y) {
+        if(!answerlist.contains(x)){
+            answerlist.add(x);
+        }
+        if(!answerlist.contains(y)){
+            answerlist.add(y);
+        }
     }
 
 }
