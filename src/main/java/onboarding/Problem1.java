@@ -9,17 +9,23 @@ class Problem1 {
         int pobi_score = get_score(pobi);
         int crong_score = get_score(crong);
 
-        if(pobi_score < 0 || crong_score < 0)
-            return -1;
-        if(pobi_score > crong_score)
-            return 1;
-        if(pobi_score < crong_score)
-            return 2;
-        if(pobi_score == crong_score)
-            return 0;
+        answer = who_wins(pobi_score, crong_score);
 
         return answer;
     }
+
+    public static int who_wins(int x, int y) {
+        if(x < 0 || y < 0)
+            return -1;
+        if(x > y)
+            return 1;
+        if(x < y)
+            return 2;
+        if(x == y)
+            return 0;
+        return -1;
+    }
+
 
     public static int get_score(List<Integer> pages){
         int score = Integer.MAX_VALUE;
