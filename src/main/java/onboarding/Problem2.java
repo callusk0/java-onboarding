@@ -89,6 +89,7 @@ public class Problem2 {
     public static String get_answer(String answer) {
         if(answer.length() <2)
             return answer;
+            
         StringBuilder temp = new StringBuilder();
         //마지막 처리
 
@@ -112,11 +113,11 @@ public class Problem2 {
                 }
             }
         }
+        
         if( a== answer.length()- 1)
         {
             return answer;
         }
-
 
         if(x != answer.charAt(answer.length() - 2)){
             temp.append(x);
