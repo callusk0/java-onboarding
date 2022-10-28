@@ -44,17 +44,17 @@ class Problem1 {
     public static int get_pageScore(int num){
         int score = Integer.MAX_VALUE;
 
-        int z = 0;
+        int hen = 0;
 
         if (num >= 100){
-            z = num /100;
-            num = num -z*100;
+            hen = num /100;
+            num = num -hen*100;
         }
         
-        int x = num / 10;
-        int y = num % 10;
+        int ten = num / 10;
+        int one = num % 10;
 
-        score = get_biggest(x, y, z);
+        score = get_biggest(one, ten, hen);
 
         return score;
     }
@@ -65,10 +65,13 @@ class Problem1 {
         int sum = 0;
         int pro = 0;
         sum = x + y + z;
-        if(z == 0)
-            pro = x * y;
-        else
+
+        if(z != 0 && y != 0)
             pro = x * y * z;
+        else if(z == 0 && y != 0)
+            pro = x * y;
+        else if(z == 0 && y == 0)
+            pro = x;
         
         score = sum >= pro ? sum : pro;
 
