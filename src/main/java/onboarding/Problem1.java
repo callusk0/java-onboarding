@@ -17,12 +17,12 @@ class Problem1 {
     public static int who_wins(int x, int y) {
         if(x < 0 || y < 0)
             return -1;
+        if(x == y)
+            return 0;
         if(x > y)
             return 1;
         if(x < y)
             return 2;
-        if(x == y)
-            return 0;
         return -1;
     }
 
