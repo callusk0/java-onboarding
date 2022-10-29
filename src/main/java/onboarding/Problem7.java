@@ -2,7 +2,6 @@ package onboarding;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
@@ -131,12 +130,7 @@ public class Problem7 {
         List<String> topscores = new ArrayList<String>();
         List<String> sortkeys = new ArrayList<>(scores.keySet());
         sortkeys.sort(String.CASE_INSENSITIVE_ORDER); //알파벳순 정렬
-        sortkeys.sort(new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return scores.get(o2).compareTo(scores.get(o1));
-            }
-        });
+        sortkeys.sort((o1, o2) -> scores.get(o2).compareTo(scores.get(o1)));
 
         for(int i = 0; i<sortkeys.size();i++)
         {
