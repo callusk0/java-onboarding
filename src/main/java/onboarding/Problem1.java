@@ -28,7 +28,6 @@ class Problem1 {
 
 
     public static int get_score(List<Integer> pages){
-        int score = Integer.MAX_VALUE;
         if (pages.size() < 0 || pages.size() > 2)
             return -1;
         int left = pages.get(0);
@@ -42,14 +41,10 @@ class Problem1 {
         int left_score = get_pageScore(left);
         int right_score = get_pageScore(right);
 
-        score = left_score >= right_score ? left_score : right_score;
-
-        return score;
+        return left_score >= right_score ? left_score : right_score;
     }
 
     public static int get_pageScore(int num){
-        int score = Integer.MAX_VALUE;
-
         int hen = 0;
 
         if (num >= 100){
@@ -60,28 +55,23 @@ class Problem1 {
         int ten = num / 10;
         int one = num % 10;
 
-        score = get_biggest(one, ten, hen);
-
-        return score;
+        return get_biggest(one, ten, hen);
     }
 
-    public static int get_biggest(int x, int y, int z){
-        int score = Integer.MAX_VALUE;
+    public static int get_biggest(int one, int ten, int hen){
 
         int sum = 0;
         int pro = 0;
-        sum = x + y + z;
+        sum = one + ten + hen;
 
-        if(z != 0 && y != 0)
-            pro = x * y * z;
-        else if(z == 0 && y != 0)
-            pro = x * y;
-        else if(z == 0 && y == 0)
-            pro = x;
-        
-        score = sum >= pro ? sum : pro;
+        if(hen != 0 && ten != 0)
+            pro = one * ten * hen;
+        else if(hen == 0 && ten != 0)
+            pro = one * ten;
+        else if(hen == 0 && ten == 0)
+            pro = one;
 
-        return score;
+        return sum >= pro ? sum : pro;
     }
 
 }

@@ -141,9 +141,7 @@ public class Problem7 {
                 topscores.add(sortkeys.get(i));
             }
         }
-
         return topscores;
-
     }
 
 }
