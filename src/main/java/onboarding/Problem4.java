@@ -17,7 +17,7 @@ public class Problem4 {
         StringBuilder temp = new StringBuilder();
 
         for(int i =0;i<word.length();i++){
-            if(dic.get(Character.toString(word.charAt(i))) != null ? true: false){
+            if(dic.get(Character.toString(word.charAt(i))) != null){
                 temp.append(dic.get(Character.toString(word.charAt(i))));
             }
             else{
@@ -30,6 +30,7 @@ public class Problem4 {
 
     public static HashMap<String,String> set_hashmap(HashMap<String,String> dic)
     {
+        //ASCII A = 65 Z = 90 a = 97 z = 122
 
         dic.put("A", "Z");
         dic.put("B", "Y");

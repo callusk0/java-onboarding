@@ -19,33 +19,30 @@ public class Problem5 {
         int temp = 0;
 
         //50000
-        answer.add(money/50000);
-        temp = money%50000;
+        temp = div_money(answer, money, 50000);
         //10000
-        answer.add(temp/10000);
-        temp = temp%10000;
+        temp = div_money(answer, temp, 10000);
         //5000
-        answer.add(temp/5000);
-        temp = temp%5000;
+        temp = div_money(answer, temp, 5000);
         //1000
-        answer.add(temp/1000);
-        temp = temp%1000;
+        temp = div_money(answer, temp, 1000);
         //500
-        answer.add(temp/500);
-        temp = temp%500;
+        temp = div_money(answer, temp, 500);
         //100
-        answer.add(temp/100);
-        temp = temp%100;
+        temp = div_money(answer, temp, 100);
         //50
-        answer.add(temp/50);
-        temp = temp%50;
+        temp = div_money(answer, temp, 50);
         //10
-        answer.add(temp/10);
-        temp = temp%10;
+        temp = div_money(answer, temp, 10);
         //1
-        answer.add(temp/1);
-        temp = temp%1;
+        temp = div_money(answer, temp, 1);
 
         return answer;
+    }
+
+    private static int div_money(List<Integer> answer, int temp, int toDiv) {
+        answer.add(temp/toDiv);
+        temp = temp%toDiv;
+        return temp;
     }
 }
