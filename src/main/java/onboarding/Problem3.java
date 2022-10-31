@@ -77,5 +77,4 @@ public class Problem3 {
         return digit;
     }
 
-
 }
