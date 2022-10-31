@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53bf1c5 (제출)
 package onboarding;
 
 
@@ -79,6 +82,7 @@ public class Problem3 {
     }
 
 }
+<<<<<<< HEAD
 =======
 package onboarding;
 
@@ -149,3 +153,5 @@ public class Problem3 {
 
 }
 >>>>>>> 6d54423 (리팩토링 시작)
+=======
+>>>>>>> 53bf1c5 (제출)

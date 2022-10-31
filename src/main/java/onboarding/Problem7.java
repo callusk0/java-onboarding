@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53bf1c5 (제출)
 package onboarding;
 
 import java.util.ArrayList;
@@ -146,6 +149,7 @@ public class Problem7 {
     }
 
 }
+<<<<<<< HEAD
 =======
 package onboarding;
 
@@ -283,3 +287,5 @@ public class Problem7 {
 
 }
 >>>>>>> 6d54423 (리팩토링 시작)
+=======
+>>>>>>> 53bf1c5 (제출)

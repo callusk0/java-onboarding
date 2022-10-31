@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53bf1c5 (제출)
 package onboarding;
 
 import java.util.List;
@@ -75,6 +78,7 @@ class Problem1 {
         return sum >= pro ? sum : pro;
     }
 
+<<<<<<< HEAD
 =======
 package onboarding;
 
@@ -163,4 +167,6 @@ class Problem1 {
     }
 
 >>>>>>> 70ce538 (gradlew 빌드 테스트)
+=======
+>>>>>>> 53bf1c5 (제출)
 }
